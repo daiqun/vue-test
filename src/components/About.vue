@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="about">
     <h1>{{ msg }}</h1>
   </div>
 </template>
@@ -8,7 +8,7 @@
     name: 'hi',
     data() {
       return {
-        msg: 'Hi, I am JSPang'
+        msg: 'Hi, I am About JSPang'
       }
     }
   }
