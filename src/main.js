@@ -3,6 +3,8 @@ import ElementUI from 'element-ui'
 import App from './App.vue'
 // axios
 import axios from 'axios'
+// qs
+import qs from 'qs'
 // css
 import 'element-ui/lib/theme-chalk/index.css'
 // router
@@ -11,6 +13,7 @@ import router from "./router/router.js"
 axios.defaults.baseURL = 'http://localhost:9000/api'
 
 Vue.prototype.$axios = axios
+Vue.prototype.$qs = qs
 
 // element ui
 Vue.use(ElementUI);

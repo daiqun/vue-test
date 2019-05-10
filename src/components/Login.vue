@@ -51,7 +51,11 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$axios.get('/home/dept', {username: 'admin', password: '123456'}).then(function (response) {
+          let params = {
+            username: this.ruleForm.username,
+            password: this.ruleForm.pass
+          }
+          this.$axios.post('/login', this.$qs.stringify(params)).then(function (response) {
             console.log("success")
             this.$router.push("/home")
           }.bind(this)).catch(function (error) {
