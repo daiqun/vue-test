@@ -56,8 +56,18 @@ export default {
             password: this.ruleForm.pass
           }
           this.$axios.post('/login', this.$qs.stringify(params)).then(function (response) {
-            console.log("success")
-            this.$router.push("/home")
+            if (response.data.success == false) {
+              this.$toast.warn({
+                title: "WARN",
+                message: response.data.message
+              });
+            } else {
+              this.$toast.success({
+                title: "SUCCESS",
+                message: "登陆成功"
+              });
+              this.$router.push("/home");
+            }
           }.bind(this)).catch(function (error) {
             console.log(error);
           });
