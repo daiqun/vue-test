@@ -68,8 +68,11 @@ export default {
               });
               this.$router.push("/home");
             }
-          }.bind(this)).catch(function (error) {
-            console.log(error);
+          }.bind(this)).catch(error => {
+            this.$toast.warn({
+              title: "WARN",
+              message: error
+            });
           });
         } else {
           return false;
